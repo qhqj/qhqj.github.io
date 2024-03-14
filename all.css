@@ -1,0 +1,287 @@
+/* 通用样式 */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+}
+
+h1,h2,h3,h4,h5,h6,p {
+    margin: 0;
+    padding: 0;
+}
+
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding-left: 20px;
+}
+
+
+.container {
+    display: flex;
+    height: 100vh;
+}
+
+.sidebar {
+    min-width: 200px;
+    max-width: 400px;
+    width: 250px;
+    background-color: #f5f5f5;
+    overflow: hidden;
+    position: relative;
+}
+
+.sidebar::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    right: -5px;
+    bottom: 0;
+    width: 10px;
+    cursor: ew-resize;
+}
+
+.sidebar:hover::after {
+    background-color: rgba(0, 0, 0, 0.1);
+}
+
+.sidebar-content {
+    padding: 10px;
+}
+
+.sidebar-header {
+    background-color: #ddd;
+    padding: 10px;
+}
+
+.contacts a {
+    text-decoration: none;
+    color: inherit;
+
+}
+
+.groups a {
+    text-decoration: none;
+
+    color: inherit;
+
+}
+
+.list-item {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+
+
+}
+
+.list-item a {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+
+}
+
+.avatar {
+    margin-right: 10px;
+
+}
+
+.avatar img {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+}
+
+.info {
+    flex-grow: 1;
+}
+
+.info h4 {
+    margin: 0;
+}
+
+.info span {
+    color: #808080;
+    font-size: 14px;
+}
+
+
+a:only-child span.unread-message {
+    color: #FFB6C1;
+    font-weight: bold;
+}
+
+
+.chat {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    background-color: #fff;
+}
+
+.chat-header {
+    background-color: #eee;
+    padding: 10px;
+}
+
+.chat-messages {
+    flex: 1;
+    padding: 10px;
+    overflow-y: auto;
+}
+
+
+.message {
+    margin-bottom: 20px;
+}
+
+.message-info {
+    display: flex;
+    align-items: flex-start;
+}
+
+.avatar img {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    margin-right: 10px;
+}
+
+.message-content {
+    max-width: 40%;
+}
+
+.sender {
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+.bubble {
+    background-color: #e6f2ff;
+    padding: 10px;
+    border-radius: 10px;
+    margin-bottom: 5px;
+}
+
+.bubble p {
+    word-wrap: break-word;
+    white-space: pre-wrap;
+}
+
+.bubble img {
+    max-width: 100%;
+    height: auto;
+}
+
+.meta {
+    display: flex;
+    justify-content: space-between;
+}
+
+.sent-at {
+    font-size: 12px;
+}
+
+.read-status {
+    font-size: 12px;
+    color: #666;
+}
+
+
+.sent-by-me .message-info {
+    flex-direction: row-reverse;
+
+}
+
+.sent-by-me .avatar {
+    margin-left: 10px;
+    margin-right: 0;
+}
+
+
+.chat-input {
+    padding: 10px;
+}
+
+
+.input-container {
+    border: 1px solid #ccc;
+    border-radius: 20px;
+    margin-top: 10px;
+    padding: 10px;
+    background-color: #f0f0f0;
+    display: flex;
+    align-items: center;
+}
+
+.input-container textarea {
+    height: 40px;
+    resize: none;
+    border: none;
+    padding: 10px;
+    border-radius: 20px;
+    outline: none;
+    background-color: transparent;
+    flex: 1;
+    margin-right: 10px;
+    transition: height 0.3s;
+    font-size: 16px;
+    min-height: 40px;
+    max-height: 200px;
+    overflow-y: auto;
+}
+
+.input-container button {
+    width: 60px;
+    height: 40px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    border-radius: 10px;
+    transition: background-color 0.3s;
+}
+
+.input-container button:hover {
+    background-color: #0056b3;
+}
+
+
+.chat-upload {
+    margin-top: 10px;
+    margin-left: 20px;
+    margin-right: 20px;
+}
+
+.chat-upload label {
+    display: inline-block;
+    padding: 8px 12px;
+    background-color: #007bff;
+    color: #fff;
+    font-size: 14px;
+    border-radius: 4px;
+    cursor: pointer;
+    margin-right: 10px;
+    transition: background-color 0.3s;
+}
+
+.chat-upload label:hover {
+    background-color: #0056b3;
+}
+
+input[type="file"] {
+    display: none;
+}
+
+.read-status.unread {
+    font-size: 12px;
+    color: #FFB6C1;
+    font-family: Arial, sans-serif;
+}
+
+.read-status.read {
+    font-size: 12px;
+    color: #90EE90;
+    font-family: Arial, sans-serif;
+}
