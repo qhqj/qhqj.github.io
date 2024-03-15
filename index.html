@@ -1,91 +1,36 @@
 <!DOCTYPE html>
 <html lang="zh-CN">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>聊天界面</title>
-    <link rel="stylesheet" href="all.css">
+    <title>登录</title>
+    <link rel="stylesheet" href="styles.css">
 </head>
-
 <body>
-<div class="container">
-    <div class="sidebar" id="sidebar">
-        <div class="sidebar-header">
-            <h2>联系人</h2>
-        </div>
-        <div class="sidebar-content">
-            <!-- 侧边栏联系人列表 -->
-            <div class="group">
-                <h3 class="group-header">好友</h3>
-                <ul class="contacts">
-                    <!-- 填充具体联系人 -->
-                </ul>
-            </div>
-            <div class="group">
-                <h3 class="group-header">群组</h3>
-                <ul class="groups">
-                    <!-- 填充具体群组 -->
-                </ul>
-            </div>
-        </div>
-    </div>
-
-
-    <div class="chat">
-        <div class="chat-header">
-            <h2>聊天对象</h2>
-        </div>
-        <div class="chat-messages" id="chat-messages">
-            <!-- 聊天消息 -->
-        </div>
-        <div class="chat-upload">
-            <input type="file" id="upload-image" accept="image/*" style="display: none;">
-            <label for="upload-image">上传图片</label>
-            <input type="file" id="upload-file" accept=".pdf,.doc,.docx,.xls,.xlsx,.ppt,.pptx,.zip,.7z,.rar"
-                   style="display: none;">
-            <label for="upload-file">上传文件</label>
-        </div>
-
-        <div class="chat-input">
-            <div class="input-container">
-                <textarea placeholder="输入消息..."></textarea>
-                <button>发送</button>
-            </div>
-        </div>
-    </div>
+<div class="form-container">
+    <form action="/submit-login" method="POST">
+        <h2>登录</h2>
+        <input type="text" placeholder="昵称或手机号" name="login" required>
+        <input type="password" placeholder="密码，8-16位" name="password" id="passwordInput" required
+               data-password="显示密码">
+        <button type="submit">登录</button>
+        <p>没有账号？<a href="register.html">注册</a></p>
+    </form>
 </div>
-
-<script src="demochat.js"></script>
-<script src="findusername-test.js"></script>
-<script src="getmessage-test.js"></script>
-<!--加载对话-->
-<script src="fillContacts.js"></script>
-
-
-<script src="demochart_inputarea.js"></script>
-<!--输入框调节-->
-
-<script src="demochat_dragsidebar.js"></script>
-<!--边框拖动-->
-
-<script src="whitelist.js"></script>
-
 <script>
-    // const checkIfThursday = () => {
-    //     const today = new Date();
-    //     if (today.getDay() === 4) {
-    //         setInterval(() => {
-    //             console.error("Today is KFC Crazy Thursday please give me ￥50");
-    //             console.error("Today is KFC Crazy Thursday please give me ￥50");
-    //         }, 100);
-    //     }
-    // }
-    //
-    // checkIfThursday();
+    // 切换密码的显示状态
+    document.getElementById('passwordInput').addEventListener('mouseenter', () => {
+        const inputField = document.getElementById('passwordInput');
+        inputField.type = "text";
+        inputField.dataset.password = "隐藏密码";
+    });
+
+    document.getElementById('passwordInput').addEventListener('mouseleave', () => {
+        const inputField = document.getElementById('passwordInput');
+        inputField.type = "password";
+        inputField.dataset.password = "显示密码";
+    });
 </script>
-
-
 </body>
-
 </html>
+
